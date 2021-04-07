@@ -1,0 +1,310 @@
+-----------------------------------com.example.Tweet.java-----------------------------------
+
+package com.example;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+"created_at",
+"id",
+"text"
+})
+@Generated("jsonschema2pojo")
+public class Tweet implements Serializable
+{
+
+@JsonProperty("created_at")
+private String createdAt;
+@JsonProperty("id")
+private String id;
+@JsonProperty("text")
+private String text;
+private final static long serialVersionUID = -8712940487655622243L;
+
+/**
+* No args constructor for use in serialization
+*
+*/
+public Tweet() {
+}
+
+/**
+*
+* @param createdAt
+* @param id
+* @param text
+*/
+public Tweet(String createdAt, String id, String text) {
+super();
+this.createdAt = createdAt;
+this.id = id;
+this.text = text;
+}
+
+@JsonProperty("created_at")
+public String getCreatedAt() {
+return createdAt;
+}
+
+@JsonProperty("created_at")
+public void setCreatedAt(String createdAt) {
+this.createdAt = createdAt;
+}
+
+@JsonProperty("id")
+public String getId() {
+return id;
+}
+
+@JsonProperty("id")
+public void setId(String id) {
+this.id = id;
+}
+
+@JsonProperty("text")
+public String getText() {
+return text;
+}
+
+@JsonProperty("text")
+public void setText(String text) {
+this.text = text;
+}
+
+@Override
+public String toString() {
+StringBuilder sb = new StringBuilder();
+sb.append(Tweet.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+sb.append("createdAt");
+sb.append('=');
+sb.append(((this.createdAt == null)?"<null>":this.createdAt));
+sb.append(',');
+sb.append("id");
+sb.append('=');
+sb.append(((this.id == null)?"<null>":this.id));
+sb.append(',');
+sb.append("text");
+sb.append('=');
+sb.append(((this.text == null)?"<null>":this.text));
+sb.append(',');
+if (sb.charAt((sb.length()- 1)) == ',') {
+sb.setCharAt((sb.length()- 1), ']');
+} else {
+sb.append(']');
+}
+return sb.toString();
+}
+
+}
+-----------------------------------com.example.UserTimeline.java-----------------------------------
+
+package com.example;
+
+import java.io.Serializable;
+import java.util.List;
+import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+"data",
+"meta"
+})
+@Generated("jsonschema2pojo")
+public class UserTimeline implements Serializable
+{
+
+@JsonProperty("data")
+private List<Tweet> data = null;
+@JsonProperty("meta")
+private Meta meta;
+private final static long serialVersionUID = 1776092399014873923L;
+
+/**
+* No args constructor for use in serialization
+*
+*/
+public UserTimeline() {
+}
+
+/**
+*
+* @param data
+* @param meta
+*/
+public UserTimeline(List<Tweet> data, Meta meta) {
+super();
+this.data = data;
+this.meta = meta;
+}
+
+@JsonProperty("data")
+public List<Tweet> getData() {
+return data;
+}
+
+@JsonProperty("data")
+public void setData(List<Tweet> data) {
+this.data = data;
+}
+
+@JsonProperty("meta")
+public Meta getMeta() {
+return meta;
+}
+
+@JsonProperty("meta")
+public void setMeta(Meta meta) {
+this.meta = meta;
+}
+
+@Override
+public String toString() {
+StringBuilder sb = new StringBuilder();
+sb.append(UserTimeline.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+sb.append("data");
+sb.append('=');
+sb.append(((this.data == null)?"<null>":this.data));
+sb.append(',');
+sb.append("meta");
+sb.append('=');
+sb.append(((this.meta == null)?"<null>":this.meta));
+sb.append(',');
+if (sb.charAt((sb.length()- 1)) == ',') {
+sb.setCharAt((sb.length()- 1), ']');
+} else {
+sb.append(']');
+}
+return sb.toString();
+}
+
+}
+-----------------------------------com.example.Meta.java-----------------------------------
+
+package com.example;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+"oldest_id",
+"newest_id",
+"result_count",
+"next_token"
+})
+@Generated("jsonschema2pojo")
+public class Meta implements Serializable
+{
+
+@JsonProperty("oldest_id")
+private String oldestId;
+@JsonProperty("newest_id")
+private String newestId;
+@JsonProperty("result_count")
+private int resultCount;
+@JsonProperty("next_token")
+private String nextToken;
+private final static long serialVersionUID = 4858363746759018030L;
+
+/**
+* No args constructor for use in serialization
+*
+*/
+public Meta() {
+}
+
+/**
+*
+* @param resultCount
+* @param nextToken
+* @param oldestId
+* @param newestId
+*/
+public Meta(String oldestId, String newestId, int resultCount, String nextToken) {
+super();
+this.oldestId = oldestId;
+this.newestId = newestId;
+this.resultCount = resultCount;
+this.nextToken = nextToken;
+}
+
+@JsonProperty("oldest_id")
+public String getOldestId() {
+return oldestId;
+}
+
+@JsonProperty("oldest_id")
+public void setOldestId(String oldestId) {
+this.oldestId = oldestId;
+}
+
+@JsonProperty("newest_id")
+public String getNewestId() {
+return newestId;
+}
+
+@JsonProperty("newest_id")
+public void setNewestId(String newestId) {
+this.newestId = newestId;
+}
+
+@JsonProperty("result_count")
+public int getResultCount() {
+return resultCount;
+}
+
+@JsonProperty("result_count")
+public void setResultCount(int resultCount) {
+this.resultCount = resultCount;
+}
+
+@JsonProperty("next_token")
+public String getNextToken() {
+return nextToken;
+}
+
+@JsonProperty("next_token")
+public void setNextToken(String nextToken) {
+this.nextToken = nextToken;
+}
+
+@Override
+public String toString() {
+StringBuilder sb = new StringBuilder();
+sb.append(Meta.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+sb.append("oldestId");
+sb.append('=');
+sb.append(((this.oldestId == null)?"<null>":this.oldestId));
+sb.append(',');
+sb.append("newestId");
+sb.append('=');
+sb.append(((this.newestId == null)?"<null>":this.newestId));
+sb.append(',');
+sb.append("resultCount");
+sb.append('=');
+sb.append(this.resultCount);
+sb.append(',');
+sb.append("nextToken");
+sb.append('=');
+sb.append(((this.nextToken == null)?"<null>":this.nextToken));
+sb.append(',');
+if (sb.charAt((sb.length()- 1)) == ',') {
+sb.setCharAt((sb.length()- 1), ']');
+} else {
+sb.append(']');
+}
+return sb.toString();
+}
+
+}
